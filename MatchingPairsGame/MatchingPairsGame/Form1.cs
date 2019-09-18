@@ -64,7 +64,6 @@ namespace MatchingPairsGame
                 {
                     return;
                 }
-                //clickedLabel.ForeColor = Color.Black;
                 if (firstClicked == null)
                 {
                     firstClicked = clickedLabel;
@@ -73,6 +72,14 @@ namespace MatchingPairsGame
                 }
                 secondClicked = clickedLabel;
                 secondClicked.ForeColor = Color.Black;
+
+                if(firstClicked.Text == secondClicked.Text)
+                {
+                    firstClicked = null;
+                    secondClicked = null;
+                    return;
+                }
+
                 timerMatchingPairsGame.Start();
             }
         }
