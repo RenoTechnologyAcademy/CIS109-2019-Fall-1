@@ -29,6 +29,23 @@ namespace MatchingPairsGame
         public FormMatchingPairsGame()
         {
             InitializeComponent();
+            AssignIconsToSquares();
+        }
+
+        private void AssignIconsToSquares()
+        {
+            foreach(Control control in tableLayoutPanelMatchingPairsGame.Controls)
+            {
+                Label iconLabel = control as Label;
+                if(iconLabel != null)
+                {
+                    int randomNumber = random.Next(icons.Count);
+                    iconLabel.Text = icons[randomNumber];
+
+                    iconLabel.ForeColor = iconLabel.BackColor;
+                    icons.RemoveAt(randomNumber);
+                }
+            }
         }
     }
 }
