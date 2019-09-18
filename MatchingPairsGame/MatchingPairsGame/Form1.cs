@@ -19,6 +19,9 @@ namespace MatchingPairsGame
 {
     public partial class FormMatchingPairsGame : Form
     {
+        Label firstClicked = null;
+        Label secondClicked = null;
+
         Random random = new Random();
         List<string> icons = new List<string>()
         {
@@ -57,7 +60,13 @@ namespace MatchingPairsGame
                 {
                     return;
                 }
-                clickedLabel.ForeColor = Color.Black;
+                //clickedLabel.ForeColor = Color.Black;
+                if (firstClicked == null)
+                {
+                    firstClicked = clickedLabel;
+                    firstClicked.ForeColor = Color.Black;
+                    return;
+                }
             }
         }
     }
