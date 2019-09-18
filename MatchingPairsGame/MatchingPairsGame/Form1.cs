@@ -53,6 +53,10 @@ namespace MatchingPairsGame
 
         private void label_click(object sender, EventArgs e)
         {
+            if(timerMatchingPairsGame.Enabled == true)
+            {
+                return;
+            }
             Label clickedLabel = sender as Label;
             if(clickedLabel != null)
             {
@@ -67,7 +71,19 @@ namespace MatchingPairsGame
                     firstClicked.ForeColor = Color.Black;
                     return;
                 }
+                secondClicked = clickedLabel;
+                secondClicked.ForeColor = Color.Black;
+                timerMatchingPairsGame.Start();
             }
+        }
+
+        private void timerMatchingPairsGame_Tick(object sender, EventArgs e)
+        {
+            timerMatchingPairsGame.Stop();
+            firstClicked.ForeColor = firstClicked.BackColor;
+            secondClicked.ForeColor = secondClicked.BackColor;
+            firstClicked = null;
+            secondClicked = null;
         }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tableLayoutPanelMatchingPairsGame = new System.Windows.Forms.TableLayoutPanel();
             this.label00 = new System.Windows.Forms.Label();
             this.label01 = new System.Windows.Forms.Label();
@@ -45,6 +46,7 @@
             this.label31 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
+            this.timerMatchingPairsGame = new System.Windows.Forms.Timer(this.components);
             this.tableLayoutPanelMatchingPairsGame.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -276,6 +278,11 @@
             this.label33.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label33.Click += new System.EventHandler(this.label_click);
             // 
+            // timerMatchingPairsGame
+            // 
+            this.timerMatchingPairsGame.Interval = 750;
+            this.timerMatchingPairsGame.Tick += new System.EventHandler(this.timerMatchingPairsGame_Tick);
+            // 
             // FormMatchingPairsGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -308,6 +315,7 @@
         private System.Windows.Forms.Label label03;
         private System.Windows.Forms.Label label02;
         private System.Windows.Forms.Label label01;
+        private System.Windows.Forms.Timer timerMatchingPairsGame;
     }
 }
 
